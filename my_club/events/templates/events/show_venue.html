@@ -1,0 +1,30 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+
+
+<div class="card">
+    <div class="card-header">
+        <h1>{{ venue }}</h1>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Venue: {{ event.venue }}</h5>
+      <p class="card-text">
+          <ul>
+              <li>{{ venue.address }}</li>
+              <li>{{ venue.zip_code }}</li>
+              <li>{{ venue.phone }}</li>
+              <li><a href="{{ venue.web }}">{{ venue.web }}</a></li>
+              <li>{{ venue.email }}</li>
+              <li>Owner: {{ venue_owner }}</li>
+              <li>Owner's Email: {{ venue_owner.email }}</li>
+          </ul>
+          <br />
+          {% if venue.venue_image %}
+	        <img src="{{ venue.venue_image.url }}" width=500>
+	        {% endif %}
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
